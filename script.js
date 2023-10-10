@@ -1,31 +1,11 @@
-console.log("loaded")
-
-function logClick() {
-  console.log("click")
-}
-
-function logParam(param) {
-  console.log(param)
-}
-
-window.addEventListener("load", () => {
-  const rootElement = document.querySelector("#root")
-  console.log(rootElement)
-
-  rootElement.innerHTML = "lorem ipsum"
-
-  window.addEventListener("click", logClick)
-
-  window.addEventListener("click", () => logParam("logParam parameter"))
-
-  let count = 0;
-  setInterval(() => {
-    count++;
-
-    if (count % 2 === 0) {
-      console.log("tock")
-    } else {
-      console.log("tick")
+function stringSplosion(str){
+let newStr = ""
+for (let i = 0; i < str.length; i++){
+    for (let c = 0; c <= i; c++){ //Addig számol amíg el nem ér az indexig, s ismétli a folyamatot.
+        newStr += str[c]
     }
-  }, 1000)
-})
+}
+console.log(newStr)
+  }
+
+stringSplosion("Code")
